@@ -1,3 +1,7 @@
+import { enableValidation, resetValidation } from "./validate.js";
+
+enableValidation();
+
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -25,8 +29,6 @@ const initialCards = [
   },
 ];
 
-initialCards.forEach(function (card) {});
-
 const profileEditButton = document.querySelector(".profile__edit-button");
 const popUp = document.querySelector("#edit-popup");
 const closePopUp = popUp.querySelector(".popup__close");
@@ -48,6 +50,10 @@ function openModal(firstModal) {
 }
 function closeModal(secondModal) {
   secondModal.classList.remove("popup_is-opened");
+  const formElement = secondModal.querySelector(".popup__form");
+  if (formElement !== null) {
+    resetValidation(formElement);
+  }
 }
 
 closePopUp.addEventListener("click", function () {
@@ -149,3 +155,27 @@ function handleCardFormSubmit(evt) {
 }
 
 newPopUpForm.addEventListener("submit", handleCardFormSubmit);
+
+const popUpOverlay = () => {
+  const popUpList = Array.from(document.querySelectorAll(".popup"));
+  popUpList.forEach((popUpElement) => {
+    popUpElement.addEventListener("click", function (evt) {
+      if (evt.target === evt.currentTarget) {
+        closeModal(popUpElement);
+      }
+    });
+  });
+};
+popUpOverlay();
+
+const popUpKeyDown = () => {
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      const popUpOpened = document.querySelector(".popup_is-opened");
+      if (popUpOpened) {
+        closeModal(popUpOpened);
+      }
+    }
+  });
+};
+popUpKeyDown();

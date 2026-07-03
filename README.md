@@ -9,3 +9,7 @@ Todavía falta la tercera parte del proyecto, pero todo va marchando bien.
 En esta última parte del proyecto se trabajó con un template, del cual usando varias funciones se logró crear el código correcto para interactuar con los elementos de la página web, se usó una función forEach para que se automatizara la creación de las tarjetas a partir de un array de objetos.
 
 También se habilitó el uso de botones "like", "delete" y crear nuevas tarjetas añadiendolas al inicio
+
+En esta parte del proyecto del sprint 7, validación de formularios fue la parte más difícil y en la que me tardé la mayor parte del tiempo. Tuve que desarrollar funciones dentro de variables (para optimizar la rápidez de la página) y hacer una función para mostrar el error, para ocultar el error, validar si hay un error, si sí hay un error, desaparecer el botón de "Guardar", agregar addEventListener y que envolviera las otras funciones; por último, hacer una función que agregara la función anteriror y funcionara todo bien
+
+Por último hice 2 funciones para cerrar las ventanas emergentes, la primera función al hacer click fuera de esa ventana y la otra al presionar la tecla Esc, esa parte fue más rápida, pero sin duda he aprendido bastante.
