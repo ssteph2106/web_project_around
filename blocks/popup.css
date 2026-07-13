@@ -173,3 +173,7 @@
   color: red;
   font-size: 12px;
 }
+.popup__button_disabled {
+  background: #ccc;
+  cursor: default;
+}

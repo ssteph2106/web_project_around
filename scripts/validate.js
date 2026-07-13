@@ -64,4 +64,10 @@ export const enableValidation = () => {
 
 export const resetValidation = (formElement) => {
   formElement.reset();
+ const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
+ inputList.forEach((inputElement) => {
+   hideInputError(formElement, inputElement);
+ });
+const buttonElement = formElement.querySelector(".popup__button");
+ toggleButtonState(inputList, buttonElement);
 };
