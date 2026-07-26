@@ -56,6 +56,7 @@ function closeModal(secondModal) {
   }
 }
 
+
 closePopUp.addEventListener("click", function () {
   closeModal(popUp);
 });
