@@ -18,7 +18,19 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img class="profile__image" src="./images/avatar.jpg" alt="Avatar" />
+          <div class="profile__avatar-container">
+  <img
+    class="profile__image"
+    src="./images/avatar.jpg"
+    alt="Avatar"
+  />
+
+  <button
+    class="profile__avatar-edit-button"
+    type="button"
+    aria-label="Editar avatar">
+  </button>
+</div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button
@@ -95,7 +107,7 @@
               maxlength="200"
               required
             />
-            <span class="description-input-error popup__input-error"></span>
+            <span class="about-input-error popup__input-error"></span>
             <button class="button popup__button" type="submit">Guardar</button>
           </form>
         </div>
@@ -111,14 +123,14 @@
           <form class="popup__form" id="new-card-form">
             <input
               class="popup__input popup__input_type_card-name"
-              name="place-name"
+              name="name"
               placeholder="Título"
               required
               minlength="2"
               maxlength="30"
               type="text"
             />
-            <span class="place-name-input-error popup__input-error"></span>
+            <span class="name-input-error popup__input-error"></span>
             <input
               class="popup__input popup__input_type_url"
               name="link"
@@ -141,7 +153,55 @@
           <img alt="" class="popup__image" src="#" />
           <p class="popup__caption"></p>
         </div>
-      </div>
+        </div>
+<div class="popup" id="avatar-popup">
+  <div class="popup__content">
+    <button
+      class="popup__close"
+      type="button"
+      aria-label="Cerrar">
+    </button>
+
+    <h3 class="popup__title">
+      Cambiar foto de perfil
+    </h3>
+
+    <form class="popup__form" id="avatar-form">
+      <input
+        class="popup__input popup__input_type_avatar"
+        name="avatar"
+        type="url"
+        required
+      />
+
+      <span class="avatar-input-error popup__input-error"></span>
+
+      <button
+        class="button popup__button"
+        type="submit">
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>
+      <div class="popup" id="delete-popup">
+  <div class="popup__content">
+    <button
+      class="popup__close"
+      type="button"
+      aria-label="Cerrar">
+    </button>
+
+    <h3 class="popup__title">
+      ¿Estás seguro?
+    </h3>
+
+    <form class="popup__form">
+      <button
+        class="button popup__button"
+        type="submit">
+        Sí
+      </button>
     </div>
     <script type="module" src="./index.js"></script>
   </body>

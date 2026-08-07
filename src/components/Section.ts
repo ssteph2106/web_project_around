@@ -7,7 +7,9 @@ private container: HTMLElement;
 
 constructor(
 { items, renderer }: 
-{ items:CardData[]; renderer:(item: CardData) => void }, 
+{ items: CardData[]; 
+  renderer:(item: CardData) => void; 
+},
 container: string
 ){
 
@@ -24,6 +26,10 @@ this.renderer(item)
    
 addItem(element: HTMLElement): void {
 this.container.prepend(element)
+}
+
+setItems(items: CardData[]): void {
+    this.items = items;
 }
 
 }

@@ -17,7 +17,7 @@ private buttonElement: HTMLButtonElement;
     this.buttonElement = this.formElement.querySelector(this.config.submitButtonSelector) as HTMLButtonElement;
     }
 
-    private showInputError(inputElement: HTMLInputElement):void {
+    private showInputError(inputElement: HTMLInputElement):void {      
     const errorElement = this.formElement.querySelector(`.${inputElement.name}-input-error`) as HTMLElement;
     inputElement.classList.add(this.config.inputErrorClass);
     errorElement.textContent = inputElement.validationMessage;

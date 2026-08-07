@@ -21,3 +21,9 @@ Me gustó que se dio mucho orden y separar código en diferentes archivos y usan
 Dividir el código en diferentes secciones es mucho más práctico, los errores de identifican más rápido. 
 
 Hace falta seguir practicando para entender más, pero estoy orgullosa de haber terminado
+
+En el Sprint 9 se conectó el código con la API, se usaron distintas funciones GET (obtener datos de la API)/ POST (enviar datos a la Api) / PATCH (modificar info de la Api) / DELETE (borrar datos)
+
+Es mucho de ir creando código, modificando/actualizando y es comprobar que cada nuevo método funciona bien para depurarlo rápidamente; ya que si esperamos hasta el final podremos encontrar varios problemas y esto sería más caótico
+
+La verdad es que uso ChatGpt de apoyo para poder dividir el proyecto en secciones y no abrumarme, aparte la IA me explica qué debo hacer y paso a paso me apoya, así que lo he encontrado bastante útil, no me da la respuesta pero me ayuda cuando me atoro y no sé cómo seguir

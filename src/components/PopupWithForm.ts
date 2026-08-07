@@ -1,30 +1,39 @@
 import { Popup } from "./Popup.js";
 
-export class PopupWithForm extends Popup {
+export class PopupWithForm<T> extends Popup {
 private formElement: HTMLFormElement;
-private handleFormSubmit: (data: Record<string, string>) => void;
+private handleFormSubmit: (data: T) => void;
+private submitButton: HTMLButtonElement;
+private defaultButtonText: string;
 
 constructor(
 
     popupSelector: string,
-    handleFormSubmit: (data: Record<string, string>) => void,
+    handleFormSubmit: (data: T) => void,
 ){
 super(popupSelector);
 this.formElement = this.popupElement.querySelector(".popup__form") as HTMLFormElement;
 this.handleFormSubmit = handleFormSubmit;
-
+this.submitButton = this.formElement.querySelector(".popup__button") as HTMLButtonElement;
+this.defaultButtonText = this.submitButton.textContent ?? "";
 }
 
-getInputValues () {
+getInputValues(): T {
 const inputList = Array.from(this.formElement.querySelectorAll<HTMLInputElement>(".popup__input"));
-const inputValues: Record<string, string> = {
-    name: "",
-    about: ""
-};
+const inputValues = {} as T;
+
 inputList.forEach((input) => {
-inputValues[input.name] = input.value;
+(inputValues as Record<string, string>)[input.name] = input.value;
 })
 return inputValues;
+}
+
+renderLoading(isLoading: boolean): void {
+    if (isLoading) {
+        this.submitButton.textContent = "Guardando...";
+    } else {
+        this.submitButton.textContent = this.defaultButtonText;
+    }
 }
 
 override setEventListeners(): void {
@@ -35,7 +44,6 @@ evt.preventDefault();
 
 const inputValues = this.getInputValues();
 this.handleFormSubmit(inputValues);
-this.close();
 });
 }
 

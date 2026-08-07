@@ -15,5 +15,8 @@ export class Section {
     addItem(element) {
         this.container.prepend(element);
     }
+    setItems(items) {
+        this.items = items;
+    }
 }
 //# sourceMappingURL=Section.js.map
